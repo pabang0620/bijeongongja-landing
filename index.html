@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>비전공자도 됩니다 - 전자책 소개</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Serif KR', 'Nanum Myeongjo', serif;
+    font-weight: 500;
+    color: #1a1a1a;
+    background: #fff;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  p { margin: 1.1em 0; }
+  b, strong { font-weight: 700; }
+  ul { margin: 0.8em 0; padding-left: 1.2rem; }
+  li { margin: 0.55em 0; line-height: 1.75; }
+
+  a { color: #1a1a1a; }
+
+  .label {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #888;
+    margin: 0 0 1.2em;
+  }
+
+  h1 {
+    font-size: 1.9em;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.5em;
+  }
+
+  .lead-sub {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.95em;
+    font-weight: 700;
+    color: #444;
+    margin: 0 0 1.4em;
+    line-height: 1.6;
+  }
+
+  .lead {
+    font-size: 1.02em;
+    color: #333;
+    margin: 0 0 2.2em;
+  }
+
+  h2 {
+    font-size: 1.28em;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9em;
+    padding-top: 1em;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  h3 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #666;
+    margin: 0 0 0.7em;
+  }
+
+  section { margin: 4rem 0; }
+
+  .note {
+    font-size: 0.86em;
+    color: #777;
+    line-height: 1.7;
+  }
+
+  /* ── 버튼 ─────────────────────────────── */
+  .btn {
+    display: inline-block;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.92em;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    padding: 0.95em 1.7em;
+    border: 1px solid #1a1a1a;
+    text-align: center;
+  }
+  .btn-primary { background: #1a1a1a; color: #fff; }
+  .btn-primary:hover { background: #3a3a3a; border-color: #3a3a3a; }
+  .btn-outline { background: none; color: #1a1a1a; }
+  .btn-outline:hover { background: #f2f2f2; }
+  .btn-large { display: block; width: 100%; padding: 1.1em 1.7em; font-size: 1em; }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em;
+    align-items: center;
+  }
+
+  /* ── 무료 샘플 강조 박스 ──────────────── */
+  .sample-box {
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    padding: 2em 0;
+  }
+  .sample-box h2 { border-top: none; padding-top: 0; }
+  .sample-meta {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.82em;
+    color: #666;
+    margin: 0 0 1.4em;
+  }
+
+  /* ── 두 칸 비교(주는 것 / 주지 않는 것) ── */
+  .split-wrap {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .split-col {
+    flex: 1;
+    padding: 1.4em 1.5em;
+  }
+  .split-col + .split-col { border-left: 1px solid #ddd; }
+  .split-col li { font-size: 0.95em; }
+
+  /* ── 주차 블록 ────────────────────────── */
+  .week-block {
+    border-top: 1px solid #ddd;
+    padding: 1.3em 0;
+  }
+  .week-block:first-of-type { border-top: 1px solid #1a1a1a; }
+  .week-block:last-of-type { border-bottom: 1px solid #1a1a1a; }
+  .week-label {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-bottom: 0.4em;
+  }
+  .week-block p { margin: 0.5em 0; font-size: 0.97em; }
+  .week-result {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.85em;
+    color: #555;
+  }
+
+  /* ── 구성물 목록 ──────────────────────── */
+  .deliverables {
+    border: 2px solid #1a1a1a;
+    padding: 1.6em 1.6em 1.4em;
+  }
+  .deliverables ul { margin: 0; padding-left: 1.2rem; }
+  .deliverables li { font-size: 0.97em; }
+
+  /* ── 저자 인용 ────────────────────────── */
+  blockquote {
+    margin: 0 0 1.2em;
+    padding: 0 0 0 1.4em;
+    border-left: 1px solid #999;
+    font-size: 1em;
+    line-height: 1.85;
+    color: #222;
+  }
+
+  footer {
+    margin-top: 5rem;
+    padding-top: 1.4em;
+    border-top: 1px solid #ddd;
+  }
+  footer .note { text-align: center; }
+
+  @media screen and (max-width: 480px) {
+    .wrap { padding: 40px 18px 72px; }
+    body { font-size: 16.5px; }
+    h1 { font-size: 1.55em; }
+    h2 { font-size: 1.12em; }
+    .split-wrap { flex-direction: column; }
+    .split-col + .split-col {
+      border-left: none;
+      border-top: 1px solid #ddd;
+    }
+    .cta-row { flex-direction: column; align-items: stretch; }
+    .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ══════════ 헤더 ══════════ -->
+  <header>
+    <div class="label">전자책</div>
+    <h1>비전공자도 됩니다</h1>
+    <div class="lead-sub">4주 커리큘럼과 그 뒤에 이력서를 넣는 순서</div>
+    <p class="lead">
+      코딩을 한 줄도 안 써본 상태에서 시작해, 인터넷에 배포된 프로젝트 1개와
+      그것을 스스로 설명할 수 있는 상태까지 다룹니다.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="sample.pdf" target="_blank" rel="noopener">샘플 28쪽 무료로 받기</a>
+      <a class="btn btn-outline" href="#buy">구매 안내 보기</a>
+    </div>
+  </header>
+
+  <!-- ══════════ 무료 샘플 ══════════ -->
+  <section class="sample-box" id="sample">
+    <h2>조건 없이 28쪽을 먼저 확인합니다</h2>
+    <div class="sample-meta">PDF · 28쪽 · 3.1MB</div>
+    <p>
+      아래 파일은 본문 261쪽 중 28쪽입니다. Part 1 전체와 1주차 첫 학습
+      챕터가 그대로 들어 있습니다.
+    </p>
+    <p>
+      이메일 주소를 남기거나 후기를 쓰는 조건은 없습니다. 내려받아 읽어보고
+      판단하면 됩니다.
+    </p>
+    <a class="btn btn-primary" href="sample.pdf" target="_blank" rel="noopener">샘플 PDF 내려받기</a>
+  </section>
+
+  <!-- ══════════ 주는 것 / 주지 않는 것 ══════════ -->
+  <section>
+    <h2>이 책이 주는 것과 주지 않는 것</h2>
+    <p>먼저 이 책이 무엇을 약속하고 무엇을 약속하지 않는지 밝힙니다.</p>
+    <div class="split-wrap">
+      <div class="split-col">
+        <h3>주는 것</h3>
+        <ul>
+          <li>인터넷에 배포된 프로젝트 1개. 남의 컴퓨터에서도 열리는 링크와 깃허브 저장소입니다.</li>
+          <li>그 프로젝트를 처음부터 끝까지 내 입으로 설명할 수 있는 상태.</li>
+          <li>지원을 시작할 자격과 어디에 어떻게 넣을지에 대한 전략.</li>
+        </ul>
+      </div>
+      <div class="split-col">
+        <h3>주지 않는 것</h3>
+        <ul>
+          <li>취업 보장. 이력서를 넣고 떨어지고 고치는 일은 4주가 끝난 다음 날부터 시작됩니다.</li>
+          <li>연봉 보장. 이 책은 독자가 얼마를 벌게 된다는 숫자를 제시하지 않습니다.</li>
+          <li>4주라는 기간의 보장. 4주는 약속이 아니라 기준점입니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 4주 커리큘럼 ══════════ -->
+  <section>
+    <h2>4주 커리큘럼</h2>
+
+    <div class="week-block">
+      <div class="week-label">1주차 - 개념과 도구를 손에 쥔다</div>
+      <p>서버와 API가 무엇인지 그림으로 잡고, AI 코딩 도구를 실행해 첫 결과물을 만듭니다.</p>
+      <p class="week-result">손에 남는 것: 포트폴리오 1차 버전</p>
+    </div>
+
+    <div class="week-block">
+      <div class="week-label">2주차 - AI를 다루는 법을 익힌다</div>
+      <p>AI에게 무엇을 어떻게 시킬지 정리합니다. 기획서를 쓰고 역할이 다른 서브에이전트로 나눕니다.</p>
+      <p class="week-result">손에 남는 것: 기획.md, 서브에이전트 파일, CLAUDE.md</p>
+    </div>
+
+    <div class="week-block">
+      <div class="week-label">3주차 - 직접 만든다</div>
+      <p>서버, API, 화면, 데이터베이스를 하나씩 세우고 한 줄로 잇습니다.</p>
+      <p class="week-result">손에 남는 것: 내 컴퓨터에서 돌아가는 완성된 앱</p>
+    </div>
+
+    <div class="week-block">
+      <div class="week-label">4주차 - 배포하고 취업 준비 상태로 만든다</div>
+      <p>내 컴퓨터에서만 돌던 것을 인터넷에 올리고, 이력서에 실을 형태로 다듬은 뒤 스스로 설명할 수 있는지 점검합니다.</p>
+      <p class="week-result">손에 남는 것: 배포 링크, 포트폴리오 문서, 설명할 수 있는 상태</p>
+    </div>
+
+    <p class="note">
+      각 장 상단에 적힌 예상 학습 기간을 모두 더하면 24일에서 37일 사이가
+      나옵니다. 4주(28일)는 그 범위의 가운데이며, 상한도 하한도 아닙니다.
+    </p>
+  </section>
+
+  <!-- ══════════ 구성물 ══════════ -->
+  <section>
+    <h2>구성</h2>
+    <div class="deliverables">
+      <ul>
+        <li>본편 PDF 261쪽</li>
+        <li>별첨 1. 포트폴리오 템플릿</li>
+        <li>별첨 2. 에러 대처표 (에러 23개)</li>
+        <li>별첨 3. 프롬프트팩 (지시문 64개)</li>
+        <li>별첨 4. 주차별 체크리스트</li>
+        <li>완성 레포 - 4주 결과물의 정답 코드</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ 저자 소개 ══════════ -->
+  <section>
+    <h2>쓴 사람</h2>
+    <blockquote>
+      전공자였지만 반쪽짜리였습니다. 정보통신공학과라 회로가 메인이었고,
+      프로그래밍은 전공 안에서도 곁가지였습니다. 거기에 학점은 2.2였습니다.
+      공부를 하나도 안 했으니까요. 2023년에 사실상 백지에서 시작해, 3년 만에
+      근로소득과 외주 수익을 합쳐 세전 1억을 넘겼습니다.
+    </blockquote>
+    <p class="note">
+      위 금액은 저자 본인의 소득이며 근로소득과 외주 수익을 합친 세전
+      기준입니다. 독자가 같은 결과를 얻는다는 약속이 아닙니다.
+    </p>
+  </section>
+
+  <!-- ══════════ 4주 안에 되는 것과 안 되는 것 ══════════ -->
+  <section>
+    <h2>4주 안에 되는 것과 안 되는 것</h2>
+    <p>
+      이 책의 4주는 취업 완료가 아닙니다. 지원을 시작할 자격을 갖추는
+      데까지입니다. 이력서를 넣고 떨어지고 그 결과를 보고 다시 고치는 일은
+      4주가 끝난 다음 날부터 시작됩니다.
+    </p>
+    <p>
+      회사를 다니면서 저녁과 주말에만 시간을 낸다면 24일에서 37일보다 더
+      걸립니다. 그건 뒤처진 것이 아니라 정상입니다.
+    </p>
+    <p>
+      이 책이 만드는 것은 기능이 많은 앱이 아닙니다. 한 줄 일기를 저장하고
+      AI 코멘트를 한 줄 받는, 기능 개수를 늘리지 않은 앱입니다. 화려한 화면이나
+      많은 기능을 기대한다면 이 책이 다루는 범위와 다릅니다.
+    </p>
+  </section>
+
+  <!-- ══════════ 구매 ══════════ -->
+  <section id="buy">
+    <h2>구매</h2>
+    <p>
+      판매 채널과 가격은 아직 정해지지 않았습니다. 정해지는 대로 아래
+      버튼에 연결됩니다.
+    </p>
+    <!-- 여기에 텀블벅/크몽/그로블 등 실제 판매 채널 링크를 넣는다. 가격 확정 전까지는 href="#" 로 둔다. -->
+    <a class="btn btn-primary btn-large" href="#">구매하기</a>
+    <p class="note">구매 전 궁금한 점이 있다면 위 무료 샘플을 먼저 확인해 보십시오.</p>
+  </section>
+
+  <footer>
+    <p class="note">이 페이지는 전자책 「비전공자도 됩니다」의 소개 페이지입니다.</p>
+  </footer>
+
+</div>
+</body>
+</html>
