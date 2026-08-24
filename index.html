@@ -169,14 +169,6 @@
     color: #555;
   }
 
-  /* ── 구성물 목록 ──────────────────────── */
-  .deliverables {
-    border: 2px solid #1a1a1a;
-    padding: 1.6em 1.6em 1.4em;
-  }
-  .deliverables ul { margin: 0; padding-left: 1.2rem; }
-  .deliverables li { font-size: 0.97em; }
-
   /* ── 저자 인용 ────────────────────────── */
   blockquote {
     margin: 0 0 1.2em;
@@ -300,20 +292,91 @@
     </p>
   </section>
 
-  <!-- ══════════ 구성물 ══════════ -->
-  <section>
-    <h2>구성</h2>
-    <div class="deliverables">
+  <!-- ══════════ 구성 - 3개 티어 ══════════ -->
+  <section id="tiers">
+    <h2>구성 - 3개 티어</h2>
+    <p>
+      구성은 세 단계로 나뉩니다. 위 단계는 아래 단계를 전부 포함하고 그 위에
+      더하는 방식입니다.
+    </p>
+
+    <div class="week-block">
+      <div class="week-label">BASIC</div>
       <ul>
         <li>본편 PDF 266쪽</li>
+      </ul>
+    </div>
+
+    <div class="week-block">
+      <div class="week-label">STANDARD</div>
+      <p class="week-result">BASIC 전부 포함 +</p>
+      <ul>
         <li>별첨 1. 포트폴리오 템플릿</li>
         <li>별첨 2. 에러 대처표 (에러 23개)</li>
         <li>별첨 3. 프롬프트팩 (지시문 65개)</li>
         <li>별첨 4. 주차별 체크리스트</li>
-        <li>완성 레포 - 4주 결과물의 정답 코드</li>
+        <li>별첨 5. 완성 레포 - 4주 결과물의 정답 코드</li>
         <li>서브에이전트 5종 - 포트폴리오 담당, 검토 담당, 리액트 담당, 서버 담당, 배포 담당</li>
+        <li>CLAUDE.md</li>
       </ul>
     </div>
+
+    <div class="week-block">
+      <div class="week-label">PREMIUM</div>
+      <p class="week-result">STANDARD 전부 포함 +</p>
+      <ul>
+        <li>포트폴리오 첨삭 1회</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ PREMIUM 첨삭 안내 ══════════ -->
+  <section id="premium-service">
+    <h2>포트폴리오 첨삭 1회란</h2>
+    <p>
+      PREMIUM에 포함된 포트폴리오 첨삭이 정확히 무엇을 하는지 아래에
+      그대로 적습니다.
+    </p>
+    <p>
+      책 4주차-2를 마치면 손에 세 가지가 남습니다. 그 세 가지를 한 번에
+      봅니다.
+    </p>
+    <h3>보는 항목</h3>
+    <ul>
+      <li>portfolio.html을 인쇄한 PDF - 섹션 구성, 프로젝트 설명 문장, 빠진 항목</li>
+      <li>배포된 포트폴리오 링크 - 열리는지, 모바일에서 깨지지 않는지</li>
+      <li>깃허브 저장소 - 비개발자 심사자가 눌렀을 때 무엇이 보이는지</li>
+    </ul>
+    <h3>진행 방식</h3>
+    <p>
+      위 세 가지를 보내면 글로 된 피드백 1회를 돌려받습니다. 문서 하나로
+      오며, 실시간 통화나 화상 미팅은 없습니다. 1회는 왕복 1세트이며, 고친
+      뒤 다시 봐달라는 요청은 별도입니다.
+    </p>
+
+    <div class="split-wrap">
+      <div class="split-col">
+        <h3>포함하는 것</h3>
+        <ul>
+          <li>PDF, 배포 링크, 깃허브 저장소를 함께 보는 글 피드백 1회</li>
+          <li>무엇을 왜 고쳐야 하는지에 대한 설명</li>
+        </ul>
+      </div>
+      <div class="split-col">
+        <h3>포함하지 않는 것</h3>
+        <ul>
+          <li>대신 고쳐주는 작업. 무엇을 왜 고쳐야 하는지 짚어주는 것까지입니다.</li>
+          <li>취업 결과 보장</li>
+          <li>자기소개서·이력서 본문 첨삭. 포트폴리오가 대상입니다.</li>
+          <li>코드 리뷰나 기능 추가</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note">
+      구매 후 신청 기한이 있으며 판매 페이지에서 안내합니다.
+      <!-- 판매 시작 시 실제 신청 기한을 여기에 넣는다 -->
+    </p>
   </section>
 
   <!-- ══════════ 저자 소개 ══════════ -->
