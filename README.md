@@ -10,7 +10,7 @@ Threads 등에서 유입된 방문자가 도착하는 착지점이다. 무료 �
 ```
 ebook-landing/
 ├── index.html   랜딩 페이지 본체 (단일 파일, CSS 인라인, 외부 의존성 없음)
-├── sample.pdf   무료 샘플 (본편 266쪽 중 28쪽, Part 1 전체 + 1주차 첫 챕터)
+├── sample.pdf   무료 샘플 (본편 275쪽 중 28쪽, Part 1 전체 + 1주차 첫 챕터)
 └── README.md    이 파일
 ```
 
